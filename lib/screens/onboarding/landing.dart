@@ -1,5 +1,5 @@
-import 'package:easy_vahan/screens/login_page.dart';
-import 'package:easy_vahan/screens/register_page.dart';
+import 'package:easy_vahan/screens/onboarding/login_page.dart';
+import 'package:easy_vahan/screens/onboarding/register_page.dart';
 import 'package:flutter/material.dart';
 
 class Landing extends StatelessWidget {
