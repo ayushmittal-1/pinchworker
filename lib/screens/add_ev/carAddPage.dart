@@ -1,5 +1,5 @@
-import 'package:easy_vahan/carDetailPage.dart';
-import 'package:easy_vahan/login%20compo/square_tile.dart';
+
+import 'package:easy_vahan/screens/add_ev/carDetailPage.dart';
 import 'package:flutter/material.dart';
 
 class CarAddPage extends StatelessWidget {
