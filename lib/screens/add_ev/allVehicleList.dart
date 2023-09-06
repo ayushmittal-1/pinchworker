@@ -1,8 +1,6 @@
-
 import 'package:easy_vahan/screens/add_ev/carDetailPage.dart';
 import 'package:easy_vahan/screens/mapscreens/initial.dart';
 import 'package:flutter/material.dart';
-
 
 class Allvehiclelist extends StatefulWidget {
   const Allvehiclelist({Key? key}) : super(key: key);
@@ -38,7 +36,6 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(5),
-
                     ),
                   ),
                   SizedBox(width: 10,)
@@ -47,8 +44,16 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
               Row(
                 children: [
                   Container(
-                    child: ElevatedButton.icon(onPressed: (){Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {return CarDetailsPage();},));} , icon: Icon(Icons.add), label: Text('Add your vehicle')),
+                    child: ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return CarDetailsPage();
+                            },
+                          ));
+                        },
+                        icon: Icon(Icons.add),
+                        label: Text('Add your vehicle')),
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
