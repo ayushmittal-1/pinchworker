@@ -1,6 +1,6 @@
-import 'package:easy_vahan/allVehicleList.dart';
-import 'package:easy_vahan/carAddPage.dart';
-import 'package:easy_vahan/login%20compo/my_textfield.dart';
+import 'package:easy_vahan/screens/add_ev/allVehicleList.dart';
+import 'package:easy_vahan/screens/add_ev/carAddPage.dart';
+import 'package:easy_vahan/components/my_textfield.dart';
 import 'package:flutter/material.dart';
 
 

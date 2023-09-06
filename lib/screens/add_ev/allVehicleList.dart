@@ -1,6 +1,5 @@
-import 'package:easy_vahan/carDetailPage.dart';
+import 'package:easy_vahan/screens/add_ev/carDetailPage.dart';
 import 'package:flutter/material.dart';
-
 
 class Allvehiclelist extends StatefulWidget {
   const Allvehiclelist({Key? key}) : super(key: key);
@@ -27,7 +26,11 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                       child: Column(
                         children: [
                           Text('CarName'),
-                          Image.asset('images/electric-car.png',height: 70,width: 200,)
+                          Image.asset(
+                            'images/electric-car.png',
+                            height: 70,
+                            width: 200,
+                          )
                         ],
                       ),
                     ),
@@ -36,7 +39,6 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(5),
-
                     ),
                   )
                 ],
@@ -44,15 +46,21 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
               Row(
                 children: [
                   Container(
-                    child: ElevatedButton.icon(onPressed: (){Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {return CarDetailsPage();},));} , icon: Icon(Icons.add), label: Text('Add your vehicle')),
+                    child: ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return CarDetailsPage();
+                            },
+                          ));
+                        },
+                        icon: Icon(Icons.add),
+                        label: Text('Add your vehicle')),
                     height: 100,
                     width: 150,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey
-
-                    ),
+                        color: Colors.grey),
                   )
                 ],
               ),
