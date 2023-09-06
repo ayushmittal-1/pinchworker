@@ -1,6 +1,7 @@
 import 'package:easy_vahan/components/my_button.dart';
 import 'package:easy_vahan/components/my_textfield.dart';
 import 'package:easy_vahan/components/square_tile.dart';
+import 'package:easy_vahan/screens/add_ev/carAddPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:easy_vahan/screens/onboarding/view_models/register_vm.dart';
@@ -16,6 +17,7 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _confirmController = TextEditingController();
   // register user in method
   void registerUserIn() {}
+
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +73,6 @@ class RegisterPage extends StatelessWidget {
                           obscureText: false,
                           onChanged: (value) => authVm.setEmail(value),
                         ),
-
                         const SizedBox(height: 10),
                         TextFormField(
                           controller: _passwordController,
@@ -119,6 +120,7 @@ class RegisterPage extends StatelessWidget {
                                 ),
                               ),
                             ],
+
                           ),
                         ),
 
