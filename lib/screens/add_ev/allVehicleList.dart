@@ -17,7 +17,7 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
         backgroundColor: Colors.black,
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Row(
+          child: Column(
             children: [
               Row(
                 children: [
@@ -41,6 +41,7 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                   SizedBox(width: 10,)
                 ],
               ),
+              SizedBox(height: 10,),
               Row(
                 children: [
                   Container(
@@ -63,6 +64,12 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                     ),
                   ),
 
+
+                ],
+              ),
+              SizedBox(height: 10,),
+              Row(
+                children: [
                   ElevatedButton(onPressed: (){
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {return InitialMapScreen();},));}, child: Text(
@@ -75,9 +82,9 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  )
+                  ),
                 ],
-              ),
+              )
 
             ],
           ),

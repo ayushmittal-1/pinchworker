@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:easy_vahan/screens/onboarding/view_models/login_vm.dart';
 
+import '../add_ev/carAddPage.dart';
+
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -52,6 +54,17 @@ class LoginPage extends StatelessWidget {
 
                     // username textfield
                     TextFormField(
+                        decoration:  InputDecoration(
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey.shade400),
+                            ),
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            hintText: 'Email',
+                            hintStyle: TextStyle(color: Colors.grey[500])),
                         controller: _emailController,
                         obscureText: false,
                         onChanged: (value) => authVm.setEmail(value)),
@@ -60,6 +73,17 @@ class LoginPage extends StatelessWidget {
 
                     // password textfield
                     TextFormField(
+                        decoration:  InputDecoration(
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey.shade400),
+                            ),
+                            fillColor: Colors.grey.shade200,
+                            filled: true,
+                            hintText: 'Password',
+                            hintStyle: TextStyle(color: Colors.grey[500])),
                         controller: _passwordController,
                         obscureText: !authVm.passwordVisible,
                         onChanged: (value) => authVm.setPassword(value)),
@@ -85,11 +109,13 @@ class LoginPage extends StatelessWidget {
                     // sign in button
                     MyButton(
                       onTap: () async {
+                        Navigator.push(context, MaterialPageRoute(builder: (context){return CarAddPage(); }));
                         print("Here");
                         print(authVm.email);
                         print(authVm.password);
                         // if (_formKey.currentState!.validate()) {
                         await authVm.loginApi(context);
+
                         // }
                       },
                     ),
