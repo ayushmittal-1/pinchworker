@@ -92,7 +92,7 @@ class RegisterAuthViewModel extends ChangeNotifier {
       'name': _name.trim(),
       'dp': intValue,
     };
-
+    // print(data);
     setLoading(true);
 
     try {

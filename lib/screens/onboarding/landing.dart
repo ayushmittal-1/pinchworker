@@ -10,7 +10,7 @@ class Landing extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff222222),
+        backgroundColor: backgroundBlack,
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: ListView(
@@ -18,46 +18,64 @@ class Landing extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Welcome',style: TextStyle(fontSize: 48,color: Colors.white),),
+                  Text(
+                    'Welcome',
+                    style: TextStyle(fontSize: 48, color: textColor),
+                  ),
                 ],
               ),
-              SizedBox(height: 16,),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                Container(
-                  width: 300,
-                  height: 300,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/images/login/cover.png"),
-                      fit: BoxFit.fill,
-                    ),
-
-                  ),
-                )
-
-              ],),
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 16,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 50,
-                      width: 300,
-                      child: ElevatedButton(onPressed: (){ Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {return LoginPage();},));}, child: Text(
-                        'Log in',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontFamily: 'Exo 2',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),))
+                    width: 300,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/login/cover.png"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  )
                 ],
               ),
-              SizedBox(height: 16,),
+              SizedBox(
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      height: 50,
+                      width: 300,
+                      decoration: BoxDecoration(color: blue),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return LoginPage();
+                            },
+                          ));
+                        },
+                        child: Text(
+                          'Log in',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: textColor,
+                            fontSize: 24,
+                            fontFamily: 'Exo 2',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ))
+                ],
+              ),
+              SizedBox(
+                height: 16,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -65,27 +83,33 @@ class Landing extends StatelessWidget {
                       height: 50,
                       width: 300,
                       decoration: const BoxDecoration(
-                        color: Colors.black,
+                        color: buttonColor,
                       ),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          shadowColor:Colors.white,
+                          backgroundColor: buttonColor,
+                          shadowColor: textColor,
                         ),
-                        onPressed: (){ Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {return RegisterPage();},));}, child: const Text(
-                        'New User?',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontFamily: 'Exo 2',
-                          fontWeight: FontWeight.w400,
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return RegisterPage();
+                            },
+                          ));
+                        },
+                        child: const Text(
+                          'New User?',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontFamily: 'Exo 2',
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                      ),))
+                      ))
                 ],
               ),
-
             ],
           ),
         ),
