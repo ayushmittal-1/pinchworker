@@ -18,7 +18,10 @@ samples, guidance on mobile development, and a full API reference.
 ## Done by day
 
 - New firebase project initialised
+- New user in authentication done
+- Post details to firestore
+- User email verification
 
 ## To do
 
-- Resolve host error 'host unreachable'
+- Car Details Addition Page

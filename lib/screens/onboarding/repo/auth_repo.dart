@@ -60,8 +60,8 @@ class AuthRepo {
       email: email!,
       password: password!,
     );
-
-    // credential.user!.sendEmailVerification();
+    // print("Here");
+    credential.user!.sendEmailVerification();
 
     return UserModel(
       uid: credential.user!.uid,
