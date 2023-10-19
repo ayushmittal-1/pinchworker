@@ -21,7 +21,10 @@ samples, guidance on mobile development, and a full API reference.
 - New user in authentication done
 - Post details to firestore
 - User email verification
+- Car details addition to firebase
 
 ## To do
 
-- Car Details Addition Page
+- Remove the errors
+- Retrieve all the cars list
+- Maintain the state of selected car

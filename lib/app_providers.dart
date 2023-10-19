@@ -1,3 +1,6 @@
+import 'package:easy_vahan/providers/car_info.dart';
+import 'package:easy_vahan/screens/add_ev/repo/car_repo.dart';
+import 'package:easy_vahan/screens/add_ev/view_model/add_car_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -32,6 +35,12 @@ class AppProviders extends StatelessWidget {
               store: store,
               myRepo: AuthRepo(store: store),
               userProvider: UserProv(dataStore: store))),
+      ChangeNotifierProvider(
+          create: (_) => AddCarViewModel(
+              store: store,
+              myRepo: CarRepo(store: store),
+              userProvider: UserProv(dataStore: store),
+              carProv: CarProv(dataStore: store))),
     ], child: child);
   }
 }

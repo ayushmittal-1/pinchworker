@@ -112,12 +112,13 @@ class RegisterAuthViewModel extends ChangeNotifier {
           name: data['name'],
           dp: data['dp'],
           cars: []);
+
       postDetailsToFirestore(userModel);
 
       await Navigator.of(NavigationService.navigatorKey.currentContext!,
               rootNavigator: true)
           .pushAndRemoveUntil(
-              Routes.testing(), (Route<dynamic> route) => false);
+              Routes.vehicleList(), (Route<dynamic> route) => false);
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
         case "email-already-in-use":

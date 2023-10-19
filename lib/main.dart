@@ -41,12 +41,5 @@ class EasyVahan extends StatelessWidget {
         debugShowCheckedModeBanner: false,
       ),
     );
-
-    // return MaterialApp(
-    //   home: Scaffold(
-    //     body: Landing(),
-    //   ),
-    //   debugShowCheckedModeBanner: false,
-    // );
   }
 }

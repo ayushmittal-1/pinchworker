@@ -13,7 +13,7 @@ class AuthRepo {
 
   AuthRepo({required this.store});
 
-  Future<UserModel?> getUserbyId(String uid) async {
+  Future<UserModel?> getUserById(String uid) async {
     var user = await _firebaseFirestore.collection('users').doc(uid).get();
 
     UserModel userMod = UserModel(
@@ -29,7 +29,7 @@ class AuthRepo {
     if (user == null) {
       return null;
     }
-    UserModel? userMod = await getUserbyId(user.uid);
+    UserModel? userMod = await getUserById(user.uid);
 
     return userMod;
   }
@@ -60,7 +60,6 @@ class AuthRepo {
       email: email!,
       password: password!,
     );
-    // print("Here");
     credential.user!.sendEmailVerification();
 
     return UserModel(
