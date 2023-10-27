@@ -114,7 +114,10 @@ class AddCarViewModel extends ChangeNotifier {
       'carName': _carName.trim(),
       'dp': intValue,
     };
-    print(data);
+    Fluttertoast.showToast(
+        msg: data.toString(),
+        toastLength: Toast.LENGTH_LONG,
+        backgroundColor: Colors.blue);
 
     setLoading(true);
 
@@ -143,7 +146,10 @@ class AddCarViewModel extends ChangeNotifier {
           .pushAndRemoveUntil(
               Routes.testing(), (Route<dynamic> route) => false);
     } catch (e) {
-      print(e);
+      Fluttertoast.showToast(
+          msg: e.toString(),
+          toastLength: Toast.LENGTH_LONG,
+          backgroundColor: Colors.red);
     }
   }
 }
