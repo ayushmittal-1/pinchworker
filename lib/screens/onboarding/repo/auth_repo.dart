@@ -60,11 +60,12 @@ class AuthRepo {
       email: email!,
       password: password!,
     );
-    credential.user!.sendEmailVerification();
+    // credential.user!.sendEmailVerification();
 
     return UserModel(
       uid: credential.user!.uid,
     );
+    // return _userFromFirebase(user: credential.user);
   }
 
   Future<void> signOut() async {

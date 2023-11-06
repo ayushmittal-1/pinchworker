@@ -35,6 +35,14 @@ class UserProv extends ChangeNotifier {
   }
 
   dynamic getUserInfo() {
-    return currUser;
+    var uid = dataStore.getString("uid");
+    print(uid);
+    // if (currUser.uid == null) {
+    //   currUser = UserModel.fromJson(await _firebaseFirestore
+    //       .collection('users')
+    //       .doc(uid)
+    //       .get() as Map<String, dynamic>);
+    // }
+    return uid;
   }
 }

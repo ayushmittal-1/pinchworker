@@ -25,6 +25,6 @@ samples, guidance on mobile development, and a full API reference.
 
 ## To do
 
-- Remove the errors
 - Retrieve all the cars list
-- Maintain the state of selected car
+- Maintain the selected car state
+- A waiting screen for email conformation

@@ -102,7 +102,7 @@ class AddCarViewModel extends ChangeNotifier {
 
   Future<void> addCarToDB(BuildContext context) async {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-    UserModel userModel = userProvider.getUserInfo();
+    String uid = userProvider.getUserInfo();
 
     var intValue = Random().nextInt(26) + 1;
 
@@ -114,10 +114,6 @@ class AddCarViewModel extends ChangeNotifier {
       'carName': _carName.trim(),
       'dp': intValue,
     };
-    Fluttertoast.showToast(
-        msg: data.toString(),
-        toastLength: Toast.LENGTH_LONG,
-        backgroundColor: Colors.blue);
 
     setLoading(true);
 
@@ -134,17 +130,17 @@ class AddCarViewModel extends ChangeNotifier {
 
       await firebaseFirestore
           .collection("users")
-          .doc(userModel.uid)
+          .doc(uid)
           .collection('cars')
           .doc(carId)
           .set(carModel.toJson());
 
       setLoading(false);
 
-      await Navigator.of(NavigationService.navigatorKey.currentContext!,
-              rootNavigator: true)
-          .pushAndRemoveUntil(
-              Routes.testing(), (Route<dynamic> route) => false);
+      //   await Navigator.of(NavigationService.navigatorKey.currentContext!,
+      //           rootNavigator: true)
+      //       .pushAndRemoveUntil(
+      //           Routes.testing(), (Route<dynamic> route) => false);
     } catch (e) {
       Fluttertoast.showToast(
           msg: e.toString(),

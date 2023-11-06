@@ -24,7 +24,7 @@ class CarDetailsPage extends StatelessWidget {
 
       return SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -89,12 +89,13 @@ class CarDetailsPage extends StatelessWidget {
                         width: 340,
                         decoration: BoxDecoration(color: Colors.black),
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) {
-                                return Allvehiclelist();
-                              },
-                            ));
+                          onPressed: () async {
+                            await carVm.addCarToDB(context);
+                            // Navigator.push(context, MaterialPageRoute(
+                            //   builder: (context) {
+                            //     return Allvehiclelist();
+                            //   },
+                            // ));
                           },
                           child: Text(
                             'Add EV',

@@ -114,6 +114,7 @@ class RegisterAuthViewModel extends ChangeNotifier {
           cars: []);
 
       postDetailsToFirestore(userModel);
+      userProvider.updateUserInfo(userModel);
 
       await Navigator.of(NavigationService.navigatorKey.currentContext!,
               rootNavigator: true)

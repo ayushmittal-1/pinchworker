@@ -14,13 +14,4 @@ class CarProv extends ChangeNotifier {
 
   int get selected => _selected;
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
-
-  Future<void> updateSelected(int newSelected) async {
-    _selected = newSelected;
-    selectedCar = allCars[_selected];
-  }
-
-  dynamic getCar() {
-    return selectedCar;
-  }
 }
