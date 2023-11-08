@@ -1,5 +1,4 @@
 import 'package:easy_vahan/components/my_button.dart';
-import 'package:easy_vahan/components/my_textfield.dart';
 import 'package:easy_vahan/components/square_tile.dart';
 import 'package:easy_vahan/screens/add_ev/carAddPage.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +14,6 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmController = TextEditingController();
-  // register user in method
-  void registerUserIn() {}
-
 
   @override
   Widget build(BuildContext context) {
@@ -60,12 +56,13 @@ class RegisterPage extends StatelessWidget {
 
                         // username textfield
                         TextFormField(
-                          decoration:  InputDecoration(
+                          decoration: InputDecoration(
                               enabledBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey.shade400),
+                                borderSide:
+                                    BorderSide(color: Colors.grey.shade400),
                               ),
                               fillColor: Colors.grey.shade200,
                               filled: true,
@@ -80,12 +77,13 @@ class RegisterPage extends StatelessWidget {
 
                         // password textfield
                         TextFormField(
-                          decoration:  InputDecoration(
+                          decoration: InputDecoration(
                               enabledBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey.shade400),
+                                borderSide:
+                                    BorderSide(color: Colors.grey.shade400),
                               ),
                               fillColor: Colors.grey.shade200,
                               filled: true,
@@ -97,12 +95,13 @@ class RegisterPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         TextFormField(
-                          decoration:  InputDecoration(
+                          decoration: InputDecoration(
                               enabledBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey.shade400),
+                                borderSide:
+                                    BorderSide(color: Colors.grey.shade400),
                               ),
                               fillColor: Colors.grey.shade200,
                               filled: true,
@@ -114,12 +113,13 @@ class RegisterPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         TextFormField(
-                          decoration:  InputDecoration(
+                          decoration: InputDecoration(
                               enabledBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey.shade400),
+                                borderSide:
+                                    BorderSide(color: Colors.grey.shade400),
                               ),
                               fillColor: Colors.grey.shade200,
                               filled: true,
@@ -134,8 +134,11 @@ class RegisterPage extends StatelessWidget {
                         // sign in button
                         MyButton(
                           onTap: () async {
-                            Navigator.push(context, MaterialPageRoute(builder: (context){return CarAddPage(); }));
                             await authVm.signUpApi(context);
+                            // Navigator.push(context,
+                            //     MaterialPageRoute(builder: (context) {
+                            //   return CarAddPage();
+                            // }));
                           },
                         ),
                         const SizedBox(height: 50),
@@ -165,7 +168,6 @@ class RegisterPage extends StatelessWidget {
                                 ),
                               ),
                             ],
-
                           ),
                         ),
 

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:easy_vahan/screens/onboarding/landing.dart';
 import 'package:easy_vahan/screens/add_ev/allVehicleList.dart';
 import 'package:easy_vahan/screens/testing.dart';
+import 'package:easy_vahan/screens/add_ev/carDetailPage.dart';
 
 class RouteName {
   static const landing = "landing";

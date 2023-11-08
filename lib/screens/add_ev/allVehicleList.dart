@@ -27,7 +27,11 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                       child: Column(
                         children: [
                           Text('Car001'),
-                          Image.asset('assets/images/login/Apple.png',height: 50,width: 50,)
+                          Image.asset(
+                            'assets/images/login/Apple.png',
+                            height: 50,
+                            width: 50,
+                          )
                         ],
                       ),
                     ),
@@ -38,10 +42,14 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  SizedBox(width: 10,)
+                  SizedBox(
+                    width: 10,
+                  )
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 children: [
                   Container(
@@ -59,33 +67,36 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                     width: 150,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey
-
-                    ),
+                        color: Colors.grey),
                   ),
-
-
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 children: [
-                  ElevatedButton(onPressed: (){
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {return InitialMapScreen();},));}, child: Text(
-                    'Next',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontFamily: 'Exo 2',
-                      fontWeight: FontWeight.w400,
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return InitialMapScreen();
+                        },
+                      ));
+                    },
+                    child: Text(
+                      'Next',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontFamily: 'Exo 2',
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                  ),
                   ),
                 ],
               )
-
             ],
           ),
         ),

@@ -70,8 +70,8 @@ class LoginAuthViewModel with ChangeNotifier {
       'password': _password.trim(),
     };
 
-    print("email:" + _email);
-    print(_password);
+    // print("email:" + _email);
+    // print(_password);
 
     setLoading(true);
 
