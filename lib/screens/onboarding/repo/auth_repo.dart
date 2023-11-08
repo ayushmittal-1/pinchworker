@@ -17,10 +17,10 @@ class AuthRepo {
     var user = await _firebaseFirestore.collection('users').doc(uid).get();
 
     UserModel userMod = UserModel(
-        uid: user['uid'],
-        email: user['email'],
-        name: user['name'],
-        cars: user['cars']);
+      uid: user['uid'],
+      email: user['email'],
+      name: user['name'],
+    );
 
     return userMod;
   }

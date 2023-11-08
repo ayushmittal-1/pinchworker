@@ -22,6 +22,7 @@ samples, guidance on mobile development, and a full API reference.
 - Post details to firestore
 - User email verification
 - Car details addition to firebase
+- A single car flow for registration of user
 
 ## To do
 

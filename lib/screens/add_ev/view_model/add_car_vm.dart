@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_vahan/common/data_store.dart';
 import 'package:easy_vahan/models/car.dart';
@@ -6,7 +5,6 @@ import 'package:easy_vahan/providers/user_info.dart';
 import 'package:easy_vahan/providers/car_info.dart';
 import 'package:easy_vahan/screens/add_ev/repo/car_repo.dart';
 import 'package:flutter/material.dart';
-import 'package:easy_vahan/models/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:easy_vahan/common/navigation.dart';
 import 'package:easy_vahan/common/routing.dart';
@@ -17,11 +15,12 @@ class AddCarViewModel extends ChangeNotifier {
   final UserProv userProvider;
   final CarProv carProv;
 
-  AddCarViewModel(
-      {required this.store,
-      required this.myRepo,
-      required this.userProvider,
-      required this.carProv});
+  AddCarViewModel({
+    required this.store,
+    required this.myRepo,
+    required this.userProvider,
+    required this.carProv,
+  });
 
   String _number = "";
   String _capacity = "";
@@ -68,15 +67,6 @@ class AddCarViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool _detailVisible = false;
-
-  bool get detailVisible => _detailVisible;
-
-  void toggleVisible() {
-    _detailVisible = !_detailVisible;
-    notifyListeners();
-  }
-
   String errorText = "";
 
   void clearValues() {
@@ -104,15 +94,12 @@ class AddCarViewModel extends ChangeNotifier {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     String uid = userProvider.getUserInfo();
 
-    var intValue = Random().nextInt(26) + 1;
-
     Map data = {
       'number': _number.trim(),
       'capacity': _capacity,
       'company': _company.trim(),
       'model': _model.trim(),
       'carName': _carName.trim(),
-      'dp': intValue,
     };
 
     setLoading(true);
@@ -120,13 +107,13 @@ class AddCarViewModel extends ChangeNotifier {
     try {
       var carId = generateID();
       CarModel carModel = CarModel(
-          carID: carId,
-          number: data['number'],
-          capacity: data['capacity'],
-          company: data['company'],
-          model: data['model'],
-          carName: data['carName'],
-          dp: data['dp']);
+        carID: carId,
+        number: data['number'],
+        capacity: data['capacity'],
+        company: data['company'],
+        model: data['model'],
+        carName: data['carName'],
+      );
 
       await firebaseFirestore
           .collection("users")
@@ -137,10 +124,10 @@ class AddCarViewModel extends ChangeNotifier {
 
       setLoading(false);
 
-      //   await Navigator.of(NavigationService.navigatorKey.currentContext!,
-      //           rootNavigator: true)
-      //       .pushAndRemoveUntil(
-      //           Routes.testing(), (Route<dynamic> route) => false);
+      await Navigator.of(NavigationService.navigatorKey.currentContext!,
+              rootNavigator: true)
+          .pushAndRemoveUntil(
+              Routes.testing(), (Route<dynamic> route) => false);
     } catch (e) {
       Fluttertoast.showToast(
           msg: e.toString(),

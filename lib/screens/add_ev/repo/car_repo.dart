@@ -1,8 +1,5 @@
-import 'package:easy_vahan/models/car.dart';
-import 'package:easy_vahan/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:easy_vahan/common/data_store.dart';
 

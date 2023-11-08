@@ -6,17 +6,16 @@ class CarModel {
   String? model;
   String? carName;
   String? linkModel;
-  int? dp;
 
-  CarModel(
-      {this.carID,
-      this.number,
-      this.capacity,
-      this.company,
-      this.model,
-      this.carName,
-      this.linkModel,
-      this.dp});
+  CarModel({
+    this.carID,
+    this.number,
+    this.capacity,
+    this.company,
+    this.model,
+    this.carName,
+    this.linkModel,
+  });
 
   CarModel.fromJson(Map<String, dynamic> json) {
     carID = json['carID'];
@@ -26,7 +25,6 @@ class CarModel {
     model = json['model'];
     carName = json['carName'];
     linkModel = json['linkDoc'];
-    dp = json['dp'];
   }
 
   Map<String, dynamic> toJson() {
@@ -38,7 +36,6 @@ class CarModel {
     data['model'] = model;
     data['carName'] = carName;
     data['linkDoc'] = linkModel;
-    data['dp'] = dp;
     return data;
   }
 }

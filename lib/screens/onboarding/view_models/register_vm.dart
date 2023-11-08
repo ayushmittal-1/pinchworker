@@ -1,9 +1,7 @@
-import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
 import 'package:easy_vahan/common/navigation.dart';
 import 'package:easy_vahan/common/routing.dart';
 import 'package:easy_vahan/models/user.dart';
@@ -84,13 +82,10 @@ class RegisterAuthViewModel extends ChangeNotifier {
   }
 
   Future<void> signUpApi(BuildContext context) async {
-    var intValue = Random().nextInt(26) + 1;
-
     Map data = {
       'email': _email.trim(),
       'password': _password.trim(),
       'name': _name.trim(),
-      'dp': intValue,
     };
     // print(data);
     setLoading(true);
@@ -107,11 +102,10 @@ class RegisterAuthViewModel extends ChangeNotifier {
       String? uid = value?.uid;
 
       UserModel userModel = UserModel(
-          uid: uid,
-          email: data['email'],
-          name: data['name'],
-          dp: data['dp'],
-          cars: []);
+        uid: uid,
+        email: data['email'],
+        name: data['name'],
+      );
 
       postDetailsToFirestore(userModel);
       userProvider.updateUserInfo(userModel);

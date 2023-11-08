@@ -36,7 +36,7 @@ class CarDetailsPage extends StatelessWidget {
                     const SizedBox(height: 1),
 
                     // welcome back, you've been missed!
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
@@ -87,17 +87,12 @@ class CarDetailsPage extends StatelessWidget {
                     Container(
                         height: 50,
                         width: 340,
-                        decoration: BoxDecoration(color: Colors.black),
+                        decoration: const BoxDecoration(color: Colors.black),
                         child: ElevatedButton(
                           onPressed: () async {
                             await carVm.addCarToDB(context);
-                            // Navigator.push(context, MaterialPageRoute(
-                            //   builder: (context) {
-                            //     return Allvehiclelist();
-                            //   },
-                            // ));
                           },
-                          child: Text(
+                          child: const Text(
                             'Add EV',
                             textAlign: TextAlign.center,
                             style: TextStyle(
