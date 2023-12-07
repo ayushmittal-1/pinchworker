@@ -15,7 +15,7 @@ class CarAddPage extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  children: [Text('Just one more \nstep...',style: TextStyle(fontSize: 48,color: Colors.white,fontFamily: 'Overpass',
+                  children: [Text('Just one more \nstep...',style: TextStyle(fontSize: 46,color: Colors.white,fontFamily: 'Overpass',
                     fontWeight: FontWeight.w400,),)],
                 ),
                 SizedBox(height: 16,),

@@ -72,7 +72,7 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
                 children: [
                   ElevatedButton(onPressed: (){
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {return InitialMapScreen();},));}, child: Text(
+                        MaterialPageRoute(builder: (context) {return MapPage();},));}, child: Text(
                     'Next',
                     textAlign: TextAlign.center,
                     style: TextStyle(

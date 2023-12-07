@@ -2,6 +2,7 @@ import 'package:easy_vahan/screens/onboarding/login_page.dart';
 import 'package:easy_vahan/screens/onboarding/register_page.dart';
 import 'package:easy_vahan/theme/color.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Landing extends StatelessWidget {
   const Landing({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class Landing extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Welcome',style: TextStyle(fontSize: 48,color: Colors.white),),
+                  Text('Welcome',style: TextStyle(fontSize: 48,color: Colors.white,)),
                 ],
               ),
               SizedBox(height: 16,),
