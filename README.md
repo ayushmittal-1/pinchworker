@@ -15,13 +15,4 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## done in branch
-
-- 
-
-## to do
-
-- maps pin location with actual
-
-# done by the day 25 sept
-- routes with several points 
+For the flow of code refer [Intro to code](./docs/intro.md)

@@ -3,7 +3,6 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
-import 'firebase_options.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -15,7 +14,6 @@ import 'firebase_options.dart';
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
-
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -46,40 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDPvv5TuvcIeMo8TGaWCa8rKHJVECIVhRc',
-    appId: '1:896355687998:web:2ae87314411b80fee1bb6f',
-    messagingSenderId: '896355687998',
-    projectId: 'easyvahan-b6dbf',
-    authDomain: 'easyvahan-b6dbf.firebaseapp.com',
-    storageBucket: 'easyvahan-b6dbf.appspot.com',
-    measurementId: 'G-33B3K2YBDY',
+    apiKey: 'AIzaSyCSdE_Jtx-lTAwi7f9GN9SE5UNBbfYaglU',
+    appId: '1:268235194950:web:7fcff2a6589abcefbe0047',
+    messagingSenderId: '268235194950',
+    projectId: 'easy-vahan',
+    authDomain: 'easy-vahan.firebaseapp.com',
+    storageBucket: 'easy-vahan.appspot.com',
+    measurementId: 'G-4YMN9EQYDK',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCzYp-MA4VGryCyNyWOi_OJQQd6yg-shnE',
-    appId: '1:896355687998:android:98514418af12511fe1bb6f',
-    messagingSenderId: '896355687998',
-    projectId: 'easyvahan-b6dbf',
-    storageBucket: 'easyvahan-b6dbf.appspot.com',
+    apiKey: 'AIzaSyBIb0LWIBiObZl1-XV1rhRYYiBv4TNf6pE',
+    appId: '1:268235194950:android:c170ae4e1801d0b8be0047',
+    messagingSenderId: '268235194950',
+    projectId: 'easy-vahan',
+    storageBucket: 'easy-vahan.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDUzuyOKdF9dI7B8vvMrQkf3kFSP05gGDc',
-    appId: '1:896355687998:ios:5bc80e4a680a012be1bb6f',
-    messagingSenderId: '896355687998',
-    projectId: 'easyvahan-b6dbf',
-    storageBucket: 'easyvahan-b6dbf.appspot.com',
-    iosClientId: '896355687998-neonsinvj6vq6tqo7sp5l7kvhp9vmlon.apps.googleusercontent.com',
+    apiKey: 'AIzaSyA8jRoBEnX6MadAlTwTTk6ZnBhFFscHNWU',
+    appId: '1:268235194950:ios:327b76d0bff1670bbe0047',
+    messagingSenderId: '268235194950',
+    projectId: 'easy-vahan',
+    storageBucket: 'easy-vahan.appspot.com',
     iosBundleId: 'com.example.easyVahan',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDUzuyOKdF9dI7B8vvMrQkf3kFSP05gGDc',
-    appId: '1:896355687998:ios:495de4013a8ce7d5e1bb6f',
-    messagingSenderId: '896355687998',
-    projectId: 'easyvahan-b6dbf',
-    storageBucket: 'easyvahan-b6dbf.appspot.com',
-    iosClientId: '896355687998-r2lt7k9q1ofun9lab44r5vmie84f0th0.apps.googleusercontent.com',
+    apiKey: 'AIzaSyA8jRoBEnX6MadAlTwTTk6ZnBhFFscHNWU',
+    appId: '1:268235194950:ios:876f0b01240ba67bbe0047',
+    messagingSenderId: '268235194950',
+    projectId: 'easy-vahan',
+    storageBucket: 'easy-vahan.appspot.com',
     iosBundleId: 'com.example.easyVahan.RunnerTests',
   );
 }

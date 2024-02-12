@@ -1,30 +1,75 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+# View Models
 
-import 'package:easy_vahan/common/navigation.dart';
-import 'package:easy_vahan/common/routing.dart';
-import 'package:easy_vahan/models/user.dart';
-import 'package:easy_vahan/providers/user_info.dart';
-import 'package:easy_vahan/screens/onboarding/repo/auth_repo.dart';
+The models are used to contact the data through database to the app and maintain integrity in data. The view models acts as a supplier of the same data to the views or the screens. Here we use functions to communicate the data between views and datbase with the help of providers. We also use shared prefrences to store some of the data locally. Every view model contaning data from datbase is under the repo folder, while the one intercating wiht screen is under the view_model folder. The view models take data with the help of providers under the providers folder in lib. Every Screen has a view model breifly covered here:
 
-class LoginAuthViewModel with ChangeNotifier {
-  final AuthRepo myRepo;
-  final UserProv userProvider;
+## Onboarding
 
-  LoginAuthViewModel({required this.myRepo, required this.userProvider});
+```dart
+Future<UserModel?> getUserById(String uid) async {
+    var user = await _firebaseFirestore.collection('users').doc(uid).get();
 
-  String errorText = "";
+    UserModel userMod = UserModel(
+      uid: user['uid'],
+      email: user['email'],
+      name: user['name'],
+    );
 
-  String _email = "";
-  String _password = "";
+    return userMod;
+  }
 
-  get email => _email;
+  Future<UserModel?> _userFromFirebase({required auth.User? user}) async {
+    if (user == null) {
+      return null;
+    }
+    UserModel? userMod = await getUserById(user.uid);
 
-  get password => _password;
+    return userMod;
+  }
 
-  setEmail(String value) {
+  Future<UserModel?> signInWithEmailAndPassword({
+    String? email,
+    String? password,
+  }) async {
+    final credential = await _firebaseAuth.signInWithEmailAndPassword(
+      email: email!,
+      password: password!,
+    );
+
+    if (!credential.user!.emailVerified) {
+      signOut();
+      throw FirebaseAuthException(code: 'unverified-email');
+    }
+
+    return _userFromFirebase(user: credential.user);
+  }
+
+  Future<UserModel?> createUserWithEmailAndPassword({
+    String? name,
+    String? email,
+    String? password,
+  }) async {
+    final credential = await _firebaseAuth.createUserWithEmailAndPassword(
+      email: email!,
+      password: password!,
+    );
+    // credential.user!.sendEmailVerification();
+
+    return UserModel(
+      uid: credential.user!.uid,
+    );
+  }
+
+  Future<void> signOut() async {
+    await _firebaseAuth.signOut();
+    store.delete(key: 'uid');
+    store.delete(key: 'loggedIn');
+  }
+```
+
+The repo for a user directly interacts with the firebase auth functionality defining functions at a datbase level.
+
+```dart
+setEmail(String value) {
     _email = value;
   }
 
@@ -126,4 +171,8 @@ class LoginAuthViewModel with ChangeNotifier {
           backgroundColor: Colors.red);
     }
   }
-}
+```
+
+While the view model on the other hand provides logic as a whole for the view or user level abstraction.
+
+Similarly all the other view models can be understood wiht the above example. All repo provide functionality at a database side while the view models provide the functionality of the screen side or the view side.

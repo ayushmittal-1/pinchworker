@@ -18,19 +18,24 @@ class CarAddPage extends StatelessWidget {
                   children: [Text('Just one more \nstep...',style: TextStyle(fontSize: 46,color: Colors.white,fontFamily: 'Overpass',
                     fontWeight: FontWeight.w400,),)],
                 ),
-                SizedBox(height: 16,),
                 Row(
                   children: [
                     Container(
-                      child: ElevatedButton.icon(onPressed: (){Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {return CarDetailsPage();},));} , icon: Icon(Icons.add), label: Text('Add your vehicle')),
+                      child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) {
+                                return CarDetailsPage();
+                              },
+                            ));
+                          },
+                          icon: Icon(Icons.add),
+                          label: Text('Add your vehicle')),
                       height: 100,
                       width: 150,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey
-                            
-                      ),
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.grey),
                     )
                   ],
                 )
@@ -38,7 +43,6 @@ class CarAddPage extends StatelessWidget {
             ),
           ),
         ),
-
       ),
     );
   }

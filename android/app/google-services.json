@@ -1,36 +1,45 @@
 {
   "project_info": {
-    "project_number": "896355687998",
-    "project_id": "easyvahan-b6dbf",
-    "storage_bucket": "easyvahan-b6dbf.appspot.com"
+    "project_number": "268235194950",
+    "project_id": "easy-vahan",
+    "storage_bucket": "easy-vahan.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:896355687998:android:98514418af12511fe1bb6f",
+        "mobilesdk_app_id": "1:268235194950:android:c60d8e27d077c0c6be0047",
         "android_client_info": {
-          "package_name": "com.example.easy_vahan"
+          "package_name": "com.EasyVahan"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "896355687998-bk0gf14s225mu2f0porcrplnrd3hs689.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCzYp-MA4VGryCyNyWOi_OJQQd6yg-shnE"
+          "current_key": "AIzaSyBIb0LWIBiObZl1-XV1rhRYYiBv4TNf6pE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "896355687998-bk0gf14s225mu2f0porcrplnrd3hs689.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268235194950:android:c170ae4e1801d0b8be0047",
+        "android_client_info": {
+          "package_name": "com.example.easy_vahan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIb0LWIBiObZl1-XV1rhRYYiBv4TNf6pE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }

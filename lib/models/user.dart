@@ -2,20 +2,15 @@ class UserModel {
   String? uid;
   String? email;
   String? name;
-  String? pushToken;
-  List<dynamic>? cars = [];
-  int? dp;
+  String? pushToken; //if notification will be implemented in further updates
 
-  UserModel(
-      {this.uid, this.email, this.name, this.pushToken, this.cars, this.dp});
+  UserModel({this.uid, this.email, this.name, this.pushToken});
 
   UserModel.fromJson(Map<String, dynamic> json) {
     uid = json['uid'];
     email = json['email'];
     name = json['name'];
     pushToken = json['pushToken'];
-    cars = json['cars'];
-    dp = json['dp'];
   }
 
   Map<String, dynamic> toJson() {
@@ -24,8 +19,6 @@ class UserModel {
     data['email'] = email;
     data['name'] = name;
     data['pushToken'] = pushToken;
-    data['cars'] = cars;
-    data['dp'] = dp;
     return data;
   }
 }
