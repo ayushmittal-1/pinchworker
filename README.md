@@ -15,17 +15,4 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## Done by day
-
-- New firebase project initialised
-- New user in authentication done
-- Post details to firestore
-- User email verification
-- Car details addition to firebase
-- A single car flow for registration of user
-
-## To do
-
-- Retrieve all the cars list
-- Maintain the selected car state
-- A waiting screen for email conformation
+For the flow of code refer [Intro to code](./docs/intro.md)

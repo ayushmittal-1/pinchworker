@@ -65,7 +65,6 @@ class AuthRepo {
     return UserModel(
       uid: credential.user!.uid,
     );
-    // return _userFromFirebase(user: credential.user);
   }
 
   Future<void> signOut() async {
