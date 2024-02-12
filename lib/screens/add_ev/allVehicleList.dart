@@ -76,23 +76,16 @@ class _AllvehiclelistState extends State<Allvehiclelist> {
               ),
               Row(
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return InitialMapScreen();
-                        },
-                      ));
-                    },
-                    child: Text(
-                      'Next',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontFamily: 'Exo 2',
-                        fontWeight: FontWeight.w400,
-                      ),
+                  ElevatedButton(onPressed: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {return MapPage();},));}, child: Text(
+                    'Next',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontFamily: 'Exo 2',
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ],
